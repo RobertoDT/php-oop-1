@@ -21,12 +21,26 @@ class User{
 
 }
 
-//creo oggetti passando come parametri gli stessi parametri del costruttore
+//creo oggetti passando come parametri gli stessi parametri del costruttore e assegno valori non presenti nel costruttore
 $user1 = new User("RobertDT", "robertodeltoro93@gmail.com", "123456789", 1);
+$user1->name = "Roberto";
+$user1->lastname = "Del Toro";
+
 $user2 = new User("picopallo", "pinco.pallo@live.it", "987654321", 2);
+$user2->name = "Pinco";
+$user2->lastname = "Pallo";
+
 $user3 = new User("pippo", "pippo@gmail.com", "ciao", 3);
+$user3->name = "Pippo";
+$user3->lastname = "Pippi";
+
 $user4 = new User("pluto", "pluto@hotmail.it", "atutti", 4);
+$user4->name = "Pluto";
+$user4->lastname = "Pluti";
+
 $user5 = new User("paperino", "paperino@libero.it", "nonsocosascrivere", 5);
+$user5->name = "Paperino";
+$user5->lastname = "Blabla";
 
 //ragguppo gli oggetti in un array generale per poterli passare all'html
 $utenti = [$user1, $user2, $user3, $user4, $user5];
@@ -49,6 +63,8 @@ $utenti = [$user1, $user2, $user3, $user4, $user5];
       <?php foreach ($utenti as $user): ?>
         <div class="utente">
           <p><strong>ID: </strong><?php echo $user->id ?></p>
+          <p><strong>Name: </strong><?php echo $user->name ?></p>
+          <p><strong>Lastname: </strong><?php echo $user->lastname ?></p>
           <p><strong>Username: </strong><?php echo $user->username ?></p>
           <p><strong>Email: </strong><?php echo $user->email ?></p>
           <p><strong>Password: </strong><?php echo $user->password ?></p>
